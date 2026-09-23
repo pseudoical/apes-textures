@@ -1,5 +1,3 @@
-// @ts-check
-
 /**
  * Usage:
  *   $ node ./src/textures.mjs
@@ -7,6 +5,8 @@
  *   $ node ./src/textures.mjs --fetch
  *       - Force download the `.tex` files and extract textures.
  */
+
+// @ts-check
 
 import fs from "node:fs";
 import path from "node:path";
