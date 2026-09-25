@@ -27,6 +27,7 @@ async function extractTextures(name) {
     }
 
     const texturesPath = path.join("textures", name);
+    await fs.promises.rm(texturesPath, { recursive: true, force: true });
     await fs.promises.mkdir(texturesPath, { recursive: true });
 
     const tex = await fs.promises.readFile(texPath);
