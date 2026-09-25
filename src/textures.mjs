@@ -22,8 +22,8 @@ async function extractTextures(name) {
     if (!fs.existsSync(texPath) || process.argv[2] === "--fetch") {
         const response = await fetch(`https://apes.io/game/260916-28dd180-ls/${texName}`);
         // A bottleneck may occur here if the server limits download speed.
-        const buffer = await response.arrayBuffer();
-        await fs.promises.writeFile(texPath, Buffer.from(buffer));
+        const data = await response.bytes();
+        await fs.promises.writeFile(texPath, data);
     }
 
     const texturesPath = path.join("textures", name);
